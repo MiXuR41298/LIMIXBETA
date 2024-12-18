@@ -1,0 +1,24 @@
+local supportedGames = {
+    [6839171747] = "LIMIXBETA",
+    [6516141723] = "LIMIXLOBBY"
+}
+
+local currentGameId = game.PlaceId
+
+local function loadScript(gameId)
+    if gameId == 6839171747 then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/MiXuR41298/LIMIX/refs/heads/main/LIMIXBETA'))()
+        print("This game is Supported. Thanks for Using")
+    elseif gameId == 6516141723 then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/MiXuR41298/LIMIXLOBBY/refs/heads/main/LIMIXLOBBY'))()
+        print("This game is Supported. Thanks for Using")
+    else
+        warn("Sorry, but this game is not Supported")
+    end
+end
+
+if supportedGames[currentGameId] then
+    loadScript(currentGameId)
+else
+    warn("Sorry, but this game is not supported")
+end
